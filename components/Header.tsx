@@ -1,28 +1,23 @@
-import Link from 'next/link';
+import Link from "next/link";
 function Header() {
     return (
-        <header className="mx-auto flex max-w-7xl flex-wrap justify-between p-5">
+        <header className="flex flex-wrap items-center justify-between p-5 md:mx-20 lg:mx-40 xl:mx-60">
             <div className="flex items-center space-x-5">
                 <Link href="/">
-                    <img
-                        className="w-44 cursor-pointer object-contain"
-                        src="https://links.papareact.com/yvf"
-                        alt="logo"
-                    />
+                    <h1 className="cursor-pointer text-xl font-bold text-gray-900">
+                        Robert Smrek
+                    </h1>
                 </Link>
-                <div className="hidden items-center space-x-5 md:inline-flex">
-                    <h3 className="cursor-pointer">About</h3>
-                    <h3 className="cursor-pointer">Contact</h3>
-                    <h3 className=" cursor-pointer rounded-full bg-green-600 px-4 py-1 text-white">
-                        Follow
-                    </h3>
-                </div>
             </div>
             <div className="flex items-center space-x-5 text-green-600">
-                <h3 className="cursor-pointer">Sign In</h3>
-                <h3 className=" cursor-pointer rounded-full border border-green-600 px-4">
-                    Get Started
-                </h3>
+                <Link href="/about">
+                    <h3 className="cursor-pointer">About Me</h3>
+                </Link>
+                <Link href="/">
+                    <h3 className=" cursor-pointer rounded-full border border-green-600 px-4">
+                        Blog
+                    </h3>
+                </Link>
             </div>
         </header>
     );

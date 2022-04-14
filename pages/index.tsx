@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import PostCard from "../components/PostCard";
 import { client, urlFor } from "../sanity";
@@ -19,13 +20,13 @@ function Home({ posts }: Props) {
 
             <Header />
 
-            <section className="mx-auto flex max-w-7xl items-center justify-evenly border-y border-y-gray-800 bg-yellow-400 p-10 lg:p-0">
+            <section className="mx-auto flex items-center justify-evenly border-y border-y-gray-800 bg-yellow-400 p-10 md:mx-20 lg:mx-40 lg:p-0 xl:mx-60 ">
                 <div className="space-y-5 px-10">
                     <h1 className="max-w-xl font-serif text-6xl">
                         <span className="underline underline-offset-2">
-                            Medium
+                            Personal blog,
                         </span>{" "}
-                        is a plece to write, read and connect.
+                        write and share stories and ideas.
                     </h1>
                     <h2 className="text-gray-600">
                         Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -40,11 +41,13 @@ function Home({ posts }: Props) {
             </section>
 
             {/* { Posts} */}
-            <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:py-10 lg:grid-cols-3">
+            <section className="mx-auto grid grid-cols-1 items-center gap-10 md:mx-20 md:grid-cols-2 md:py-10 lg:mx-40 lg:grid-cols-3 xl:mx-60">
                 {posts.map((post) => {
                     return <PostCard key={post._id} {...post} />;
                 })}
             </section>
+
+            <Footer />
         </main>
     );
 }
