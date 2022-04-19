@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 function Header() {
     return (
         <header className="flex flex-wrap items-center justify-between p-5 md:mx-20 lg:mx-40 xl:mx-60">
